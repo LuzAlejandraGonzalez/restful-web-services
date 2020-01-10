@@ -9,7 +9,7 @@ if (process.env.ENV === 'Test') {
   const db = mongoose.connect('mongodb://localhost/bookAPI_Test');
 } else {
   console.log('This is for real');
-  const db = mongoose.connect('mongodb://localhost/bookAPI-prod');
+  const db = mongoose.connect('mongodb://localhost/bookAPI');
 }
 
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use('/api', bookRouter);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to my Nodemon API');
+  res.send('Welcome to my Nodemon API!');
 });
 
 app.server = app.listen(port, () => {
